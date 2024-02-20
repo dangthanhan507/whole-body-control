@@ -9,16 +9,18 @@ from pydrake.multibody.plant import AddMultibodyPlantSceneGraph
 from pydrake.systems.primitives import ConstantVectorSource
 import numpy as np
 from env_util import AddGround
-ATLAS_PATH = "package://drake_models/atlas/atlas_convex_hull.urdf"
 
+# ATLAS_PATH = "package://drake_models/atlas/atlas_convex_hull.urdf"
+LOCAL_ATLAS = "assets/atlas/atlas_convex_hull.urdf"
 
 
 if __name__ == '__main__':
     meshcat = StartMeshcat()
     builder = DiagramBuilder()
-    plant, scene_graph = AddMultibodyPlantSceneGraph(builder, time_step=0.0)
+    plant, scene_graph = AddMultibodyPlantSceneGraph(builder, time_step=1e-3)
     parser = Parser(plant)
-    parser.AddModelsFromUrl(ATLAS_PATH)
+    # parser.AddModelsFromUrl(ATLAS_PATH)
+    parser.AddModels(LOCAL_ATLAS)
     AddGround(plant)
     plant.Finalize()
     
@@ -37,8 +39,8 @@ if __name__ == '__main__':
     context = diagram.CreateDefaultContext()
     plant_context = plant.GetMyMutableContextFromRoot(context)
     
-    plant.SetFreeBodyPose(plant_context, pelvis, RigidTransform(RollPitchYaw(0, 0, 0), [0, 0, 2]))
+    plant.SetFreeBodyPose(plant_context, pelvis, RigidTransform(RollPitchYaw(0, 0, 0), [0, 0, 1]))
     
     simulator = Simulator(diagram, context)
-    simulator.set_target_realtime_rate(100.0)
-    simulator.AdvanceTo(60.0)
+    simulator.set_target_realtime_rate(1e-2)
+    simulator.AdvanceTo(1.0)
