@@ -27,6 +27,7 @@ from pydrake.all import (
     namedview,
 )
 from underactuated import ConfigureParser
+import time
 
 def set_home(plant, context):
     PositionView = namedview("Positions", plant.GetPositionNames(
@@ -67,6 +68,7 @@ def autoDiffArrayEqual(a, b):
     )   
 
 def gait_optimization(meshcat, gait="walking_trot"):
+    start_timer = time.time()
     builder = DiagramBuilder()
     plant, scene_graph = AddMultibodyPlantSceneGraph(builder, time_step=1e-3)
     parser = Parser(plant)
@@ -623,8 +625,12 @@ def gait_optimization(meshcat, gait="walking_trot"):
     prog.SetSolverOption(snopt, "Superbasics limit", 2000)
     prog.SetSolverOption(snopt, "Linesearch tolerance", 0.9)
     
+    #solve using snopt
+    
     result = Solve(prog)
     print(result.get_solver_id().name())
+    print(f"Time it took: {time.time() - start_timer}")
+    input()
     
     def HalfStrideToFullStride(a):
         b = PositionView(np.copy(a))
