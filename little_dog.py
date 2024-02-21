@@ -3,27 +3,13 @@ from functools import partial
 import numpy as np
 from pydrake.all import (
     AddMultibodyPlantSceneGraph,
-    AddUnitQuaternionConstraintOnPlant,
-    AutoDiffXd,
     DiagramBuilder,
-    ExtractGradient,
-    ExtractValue,
-    InitializeAutoDiff,
-    JacobianWrtVariable,
     JointIndex,
-    MathematicalProgram,
     MeshcatVisualizer,
-    OrientationConstraint,
     Parser,
     PidController,
-    PiecewisePolynomial,
-    PositionConstraint,
-    RotationMatrix,
     Simulator,
-    SnoptSolver,
-    Solve,
     StartMeshcat,
-    eq,
     namedview,
 )
 
