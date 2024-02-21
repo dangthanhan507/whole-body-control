@@ -32,79 +32,13 @@
       <geometry>
         <mesh filename="./meshes/l_foot_chull.obj"/>
       </geometry>
+       <drake:proximity_properties>
+          <drake:rigid_hydroelastic/>
+          <drake:mu_dynamic value="0.5"/>
+          <drake:hunt_crossley_dissipation value="1.25"/>
+          <drake:relaxation_time value="0.1"/>
+        </drake:proximity_properties>
     </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0876 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0876 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0876 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0876 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.1728 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.1728 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.1728 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.1728 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0426 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0426 0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0426 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0426 -0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
   </link>
   <link name="l_hand">
     <inertial>
@@ -354,79 +288,13 @@
       <geometry>
         <mesh filename="./meshes/r_foot_chull.obj"/>
       </geometry>
+       <drake:proximity_properties>
+          <drake:rigid_hydroelastic/>
+          <drake:mu_dynamic value="0.5"/>
+          <drake:hunt_crossley_dissipation value="1.25"/>
+          <drake:relaxation_time value="0.1"/>
+        </drake:proximity_properties>
     </collision>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0876 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0876 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="-0.0876 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="-0.0876 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.1728 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.1728 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.1728 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.1728 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0426 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.0426 0.0626 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0.0426 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.0"/>
-      </geometry>
-    </collision>
-    <visual>
-      <origin rpy="0 0 0" xyz="0.0426 -0.066 -0.07645"/>
-      <geometry>
-        <sphere radius="0.01"/>
-      </geometry>
-    </visual>
   </link>
   <link name="r_hand">
     <inertial>
@@ -1019,9 +887,6 @@
       <geometry>
         <mesh filename="./meshes/head_chull.obj"/>
       </geometry>
-      <material name="">
-        <color rgba="0.9098 0.44314 0.031373 1"/>
-      </material>
     </collision>
   </link>
   <link name="pre_spindle"/>
@@ -1135,9 +1000,6 @@
       <geometry>
         <mesh filename="./meshes/head_camera_chull.obj"/>
       </geometry>
-      <material name="">
-        <color rgba="0.72941 0.35686 0.023529 1"/>
-      </material>
     </collision>
   </link>
   <joint name="head_hokuyo_fixed_joint" type="fixed">
