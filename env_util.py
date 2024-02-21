@@ -16,6 +16,6 @@ def RegisterShape(plant: MultibodyPlant, name:str, body: RigidBody,
         )
 
 def AddGround(plant: MultibodyPlant):
-    ground_color = [0.5, 1.0, 0.5, 1.0]
+    ground_color = [0.5, 1.0, 0.5, 0.0]
     ground_prop = AddContactModel(plant, halfspace_slab=0.5, hydro_mod = 1e10, dissip=100.0, mu_static=1.0, res_hint=0.05)
     RegisterShape(plant, "GroundVisualGeometry", plant.world_body(), HalfSpace(), ground_prop, ground_color)

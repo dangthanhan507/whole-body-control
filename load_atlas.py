@@ -21,13 +21,14 @@ if __name__ == '__main__':
     config  = MultibodyPlantConfig()
     config.time_step = 1e-3
     config.penetration_allowance = 1e-6
-    config.contact_model = "hydroelastic_with_fallback"
-    config.contact_surface_representation = "polygon"
-    config.discrete_contact_approximation = "tamsi"
+    config.contact_model = "point"
+    # config.contact_surface_representation = "polygon"
+    # config.discrete_contact_approximation = "tamsi"
     
     plant, scene_graph = AddMultibodyPlant(config, builder)
     parser = Parser(plant)
-    parser.AddModelsFromUrl(ATLAS_PATH)
+    # parser.AddModelsFromUrl(ATLAS_PATH)
+    parser.AddModels(LOCAL_ATLAS)
     AddGround(plant)
     plant.Finalize()
     
